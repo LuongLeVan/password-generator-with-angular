@@ -8,38 +8,38 @@
     <title>Password Generator</title>
   </head>
   <body>
-    <div class="bg-blue-400 mt-10 p-6 rounded-md w-[300px] min-h-[400px]">
+    <div class="bg-blue-400 mt-10 p-6 rounded-md w-[400px] min-h-[400px] md:w-[500px] md:min-h-[500px]">
       <div class=" relative bg w-full mt-5 p-4 shadow-md flex justify-center items-center">
-        <span class="text-white" #formInputText>{{password}}</span>
-        <button (click)="handleCopy()" class="absolute text-white text-[10px] top-0 bg-slate-400 right-0 font-semibold hover:cursor-pointer hover:opacity-70"  type="button" ngxClipboard [cbContent]="password">{{content}}</button>
+        <span class="text-white md:p-3 p-4 text-[24px] md:text-[32px]" #formInputText>{{password}}</span>
+        <button (click)="handleCopy()" class="absolute text-white text-[18px] md:text-[16px] top-0 bg-slate-400 right-0 font-semibold hover:cursor-pointer hover:opacity-70"  type="button" ngxClipboard [cbContent]="password">{{content}}</button>
 
       </div>
 
       <div class="flex justify-between my-4">
-        <label class="text-white" for="len">Password Length</label>
-        <input type="number" class="w-10 outline-none text-center" min="8" max="20" [(ngModel)]="length"  name="len" id="len">
+        <label class="text-white md:text-[24px] text-[18px]" for="len">Password Length</label>
+        <input type="number" class="w-[42px] outline-none text-center text-[20px]" min="8" max="20" [(ngModel)]="length"  name="len" id="len">
         
       </div>
 
       <div class="flex justify-between text-white my-4">
-        <label for="low">Contain Lowercase Letters</label>
-        <input type="checkbox" name="low" id="low" (change)="checkboxLower($event)">
+        <label for="low" class="text-[18px] md:text-[24px]">Contain Lowercase Letters</label>
+        <input class="w-[25px]" type="checkbox" name="low" id="low" (change)="checkboxLower($event)">
         
       </div>
 
       <div class="flex justify-between text-white">
-        <label for="up">Contain Uppercase Letters</label>
-        <input type="checkbox" name="up" id="up"  (change)="checkboxUpper($event)">
+        <label for="up" class="md:text-[24px] text-[18px]">Contain Uppercase Letters</label>
+        <input class="w-[25px]" type="checkbox" name="up" id="up"  (change)="checkboxUpper($event)">
       </div>
 
       <div class="flex justify-between text-white my-4">
-        <label for="num">Contain Numbers </label>
-        <input type="checkbox" name="num" id="num"  (change)="checkboxNum($event)">
+        <label for="num" class="md:text-[24px] text-[18px]">Contain Numbers </label>
+        <input class="w-[25px]" type="checkbox" name="num" id="num"  (change)="checkboxNum($event)">
       </div>
 
       <div class="flex justify-between text-white">
-        <label for="sym">Contain Symbols</label>
-        <input type="checkbox" name="sym" id="sym"  (change)="checkboxSymbol($event)">
+        <label for="sym" class="md:text-[24px] text-[18px]">Contain Symbols</label>
+        <input class="w-[25px]" type="checkbox" name="sym" id="sym"  (change)="checkboxSymbol($event)">
       </div>
 
       <button class="p-4 rounded bg-green-500 w-full mt-4 text-white font-semibold hover:cursor-pointer hover:text-yellow-400" (click)="handleGenerator()">Generator Password</button>
